@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-
+import { ToastrService } from 'ngx-toastr'; 
 import { ProductsService } from '../../../services/products.service'
 
 @Component({
@@ -13,12 +13,19 @@ export class ProductComponent  {
   producto: any = {};
 
 
-  constructor( private ActivatedRoute: ActivatedRoute, private _ProductsService:ProductsService) {
+  constructor( private ActivatedRoute: ActivatedRoute, private _ProductsService:ProductsService, private toastr: ToastrService) {
 
     this.ActivatedRoute.params.subscribe( params =>{
       this.producto = this._ProductsService.getProducto (params['id'])
     })
 
    }
+
+   onClick() {
+    this.toastr.warning('Necesesita iniciar sesion para comprar un producto', 'error al comprar', {
+      timeOut: 3000,
+    });
+  }
+
 
 }

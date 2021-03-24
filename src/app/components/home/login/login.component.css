@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(../../../../assets/img/fondo-login.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 100%;
+}
+
+.formulario {
+    background: #fff;
+    margin-top: 100px;
+    padding: 15px;
+}
+
+.formulario h1 {
+    text-align: center;
+    color: RGB(250, 128, 114,0.8);
+    font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: cadetblue;
+}
+
+p {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: cadetblue;
+}
+
+@media(min-width:768px){
+    .formulario {
+        margin: auto;
+        width: 500px;
+    }
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+header {
+	width: 100%;
+	height: 50px;
+	background: RGB(240, 128, 128);
+	color: #fff;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.contenedor {
+	width: 98%;
+	margin: auto;
+}
+
+h1 {
+	float: left;
+}
+
+header .contenedor {
+	display: table;
+}
+
+section {
+	width: 100%
+}
+
+#bienvenidos {
+	text-align: center;
+}
+
+.clientes h1 {
+	text-align: center;
+}
+
+footer .contenedor {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 25px;
+}
+
+.contacto{
+	font-size: 18px;
+}
+
+.sociales {
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+}
+
+.sociales a {
+	color: black;
+	text-decoration: none;
+}
+
+@media (min-width:768px){
+	.sociales {
+		width: auto;
+	}
+
+	footer .contenedor {
+		justify-content: space-between;
+	}
+}
+/*-------------------------------------*/
+/*--- ESTILOS (TABLA) VISITANOS ----*/
+#main-contenedor {
+	margin: 20px auto;
+	width: 1100px;
+}
+
+table {
+	background-color: white;
+	text-align: center;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: none;
+	padding: 0;
+}
+
+#main-contenedor h2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: red;
+	text-align: center;
+}
+
+#main-contenedor h3 {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	color: royalblue;
+	text-align: center;
+}
+/*-------------------------------------*/
+/*--- ESTILOS (TABLA) NOTICIAS ----*/
+#div-noticias table {
+	background-color: white;
+	border-collapse: collapse;
+	width: 100%;
+	height: 50%;	
+}
+
+#div-noticias td, th {
+	border: none;
+	padding: 25px;
+}
+
+#div-noticias h2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: palevioletred;
+	font-size: 18px;
+	text-align: center;
+}
+
+#div-noticias h3 {
+	font-size: 15px;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+/*-------------------------------------*/
+/*--- ESTILOS (TABLA) OFERTAS ----*/
+#div-ofertas table {
+	background-color: white;
+	border-collapse: collapse;
+	width: 100%;
+	height: 50%;	
+}
+
+#div-ofertas td, th {
+	border: none;
+	padding: 25px;
+}
+
+#div-ofertas h2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: palevioletred;
+	font-size: 25px;
+	text-align: center;
+}
+
+#div-ofertas h3 {
+	font-size: 20px;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+#div-ofertas img{
+	height: 350px;
+	width: 350px; 
+}

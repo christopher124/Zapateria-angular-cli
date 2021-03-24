@@ -27,6 +27,8 @@ export class OffersComponent implements OnInit {
     // console.log(this.productos);    
   }
 
+
+
   
 
 }
