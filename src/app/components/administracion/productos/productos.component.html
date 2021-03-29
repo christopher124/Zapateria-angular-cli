@@ -1,0 +1,90 @@
+<br>
+<h3 style="padding-left:550px">PRODUCTOS</h3>
+<div class="mx-auto" style="width: 250px">
+    ID:
+<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="producto._idProduc">
+
+    Nombres:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="producto.Nombre">
+
+Precio:
+<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="producto.Precio">
+
+Existencia:
+<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="producto.Existencia">
+
+Tipo:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="producto.Categoria.Tipo">
+
+Descripcion:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="producto.Categoria.Descrip">
+
+Numeracion:
+<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="producto.Categoria.Numeracion">
+
+Color:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="producto.Categoria.Color">
+
+Foto:
+<input type="file" class="form-control"  id="floatingInput" [(ngModel)]="producto.Categoria.Foto_Prod">
+
+Nombre Proveedor:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="producto.Proveedor.Nombres">
+
+Direccion:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="producto.Proveedor.Direccion">
+
+Telefono:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="producto.Proveedor.Telefono">
+
+Email:
+<input type="email" class="form-control"  id="floatingInput" [(ngModel)]="producto.Proveedor.Email">
+
+</div>
+<br>
+<br>
+<div style="padding-left:450px;" > 
+<input type="button" class="btn btn-outline-success" value="Guardar" (click)="GuardarProducto()">
+<input type="button" class="btn btn-outline-danger" value="Eliminar"  (click)="EliminarProducto()">
+<input type="button" class="btn btn-outline-warning" value="Modificar"  (click)="ModificarProducto()">
+<input type="button" class="btn btn-outline-primary" value="Consultar"  (click)="ConsultarProducto()">
+<input type="button" class="btn btn-outline-primary" value="Consulta todo"  (click)="ConsultaTodoProducto()">
+</div>
+<br>
+<br>
+<br>
+<div>
+    <table class="table table-ligth table-bordered" >
+        <tr style="background-color:black;color:rgb(255, 255, 255);">
+            <th width="2%" class="text-center">ID</th>
+            <th width="2%" class="text-center">  Nombre</th>
+            <th width="2%" class="text-center">Precio</th>
+            <th width="2%" class="text-center">Existencia</th>
+            <th width="2%" class="text-center">Tipo</th>
+            <th width="2%" class="text-center"> Descripcion </th>
+            <th width="2%" class="text-center">Numeracion</th>
+            <th width="2%" class="text-center"> Color </th>
+            <th width="2%" class="text-center">Foto</th>
+            <th width="2%" class="text-center"> Nombres</th>
+            <th width="2%" class="text-center">Direccion</th>
+            <th width="2%" class="text-center">Telefono</th>
+            <th width="2%" class="text-center">Email</th>
+        </tr>
+        <tr *ngFor="let pro of productos | async"> 
+        
+            <td width="2%" class="text-center"> {{pro._idEmpleado}}</td>
+            <td width="2%" class="text-center"> {{pro.Nombre}}</td>
+            <td width="2%" class="text-center"> {{pro.Precio}}</td>
+            <td width="2%" class="text-center"> {{pro.Existencia}}</td>
+            <td width="2%" class="text-center"> {{pro.Categoria.Tipo}}</td>
+            <td width="2%" class="text-center"> {{pro.Categoria.Descrip}}</td>
+            <td width="2%" class="text-center"> {{pro.Categoria.Numeracion}}</td>
+            <td width="2%" class="text-center"> {{pro.Categoria.Color}}</td>
+            <td width="2%" class="text-center"> {{pro.Categoria.Foto}}</td>
+            <td width="2%" class="text-center"> {{pro.Proveedor.Nombres}}</td>
+            <td width="2%" class="text-center"> {{pro.Proveedor.Direccion}}</td>
+            <td width="2%" class="text-center"> {{pro.Proveedor.Telefono}}</td>
+            <td width="2%" class="text-center"> {{pro.Proveedor.Email}}</td>
+        </tr>
+    </table>
+</div>

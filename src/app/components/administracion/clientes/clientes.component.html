@@ -1,0 +1,232 @@
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        
+
+        <!-- Sidebar -->
+        <ul class=" hola navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="  sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Panel de administracion</div>
+            </a>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]= "['/dashboard']">
+                    <i class="bi bi-speedometer"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <div class="sidebar-heading">
+                Interfaces
+            </div>
+
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]= "['/clientes']">
+                    <i class="bi bi-person-fill"></i>
+                    <span>Clientes</span></a>
+            </li>
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <!-- <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div> -->
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            
+   
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button> -->
+
+                    
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <img src="../../../../assets/img/logo-empresabn.png" width="70" height="70">
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Christopher</span>
+                                <img class="img-profile rounded-circle"
+                                    src="../../../../assets/img/undraw_profile.svg">
+                        </a>
+                            
+                            <!-- Dropdown - User Information -->
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <li><a class="dropdown-item" href="#">
+                                    <i class="bi bi-person-fill"></i>
+                                    Perfil</a></li>
+                                <li><a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="bi bi-signpost-fill"></i>
+                                    Finalizar sesión</a></li>
+                              </ul>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                                <!-- Begin Page Content -->
+                                <div class="container-fluid">
+
+                                    <!-- Page Heading -->
+                                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                        <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
+                                    </div>
+
+                                    <button data-bs-toggle="modal" data-bs-target="#exampleModal2" type="button" class="btn btn-primary">Agregar</button>
+                                    <br>
+                                    <br>
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">First</th>
+                                            <th scope="col">Last</th>
+                                            <th scope="col">Handle</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    
+                                </div>
+
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="iniciosesionServicio.cerrarSesion()" class="btn btn-primary">finalizar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+                <!-- agregar Modal-->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2">@example.com</span>
+                  </div>
+                  
+                  <label for="basic-url" class="form-label">Your vanity URL</label>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">.00</span>
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                  </div>
+                  
+                  <div class="input-group">
+                    <span class="input-group-text">With textarea</span>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="iniciosesionServicio.cerrarSesion()" class="btn btn-primary">finalizar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</body>

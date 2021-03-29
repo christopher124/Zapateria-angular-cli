@@ -9,14 +9,14 @@
 
                 <div class="input-contenedor">
                     <i class="icon-mail"></i>
-                    <input type="email" placeholder="Correo Electronico" name="correo">
+                    <input type="email" placeholder="Correo Electronico" name="correo" [(ngModel)]="usuario.Email">
                 </div>
 
                 <div class="input-contenedor">
                     <i class="icon-key"></i>
-                    <input type="password" placeholder="Contraseña" name="pass"> 
+                    <input type="password" placeholder="Contraseña" name="pass" [(ngModel)]="usuario.Password"> 
                 </div>
-                <input type="submit" value="Iniciar session" class="button">
+                <input type="submit" value="Iniciar session" class="button" (click)="login()">
                 <br><br>
                 <p>
                     Al registrarte, aceptas nuestras condiciones de uso y Avisos de 

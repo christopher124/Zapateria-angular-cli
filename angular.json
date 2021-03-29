@@ -100,7 +100,14 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./src/assets/vendor/jquery/jquery.min.js",
+              "./src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "./src/assets/js/sb-admin-2.min.js"
+            ]
           }
         },
         "lint": {

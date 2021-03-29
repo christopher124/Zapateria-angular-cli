@@ -1,0 +1,97 @@
+<br>
+<h3 style="padding-left:550px">CLIENTES</h3>
+<div class="mx-auto" style="width: 250px">
+    ID:
+<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="empleado._idEmpleado">
+
+    Nombres:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Nombres">
+
+Apellidos:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Apellidos">
+
+Direccion:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Direccion">
+
+Telefono:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Telefono">
+
+Fecha_Nacimiento:
+<input type="date" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Fecha_Nacimiento">
+
+Email:
+<input type="email" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Email">
+
+Contrasenia:
+<input type="password" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Password">
+
+Nombre:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Rol.Nombre">
+
+Sueldo:
+<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Rol.Sueldo">
+
+Fecha_Ingreso:
+<input type="date" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Rol.Fecha_ingre">
+
+NombreSuc:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.NombreSuc">
+
+DireccionSuc:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.DireccionSuc">
+
+TelefonoSuc:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.TelefonoSuc">
+
+CiudadSuc:
+<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.CiudadSuc">
+</div>
+<br>
+<br>
+<div style="padding-left:450px;" > 
+<input type="button" class="btn btn-outline-success" value="Guardar" (click)="GuardaEmpleado()">
+<input type="button" class="btn btn-outline-danger" value="Eliminar"  (click)="EliminarEmpleado()">
+<input type="button" class="btn btn-outline-warning" value="Modificar"  (click)="ModificarEmpleado()">
+<input type="button" class="btn btn-outline-primary" value="Consultar"  (click)="ConsultarEmpleado()">
+<input type="button" class="btn btn-outline-primary" value="Consulta todo"  (click)="ConsultaTodoEmpleado()">
+</div>
+<br>
+<br>
+<br>
+<div>
+    <table class="table table-ligth table-bordered" >
+        <tr style="background-color:black;color:rgb(255, 255, 255);">
+            <th width="2%" class="text-center">ID</th>
+            <th width="2%" class="text-center">  Nombres</th>
+            <th width="2%" class="text-center">Apellidos</th>
+            <th width="2%" class="text-center">Direccion</th>
+            <th width="2%" class="text-center">Telefono</th>
+            <th width="2%" class="text-center">Fecha Nacimiento</th>
+            <th width="2%" class="text-center">Email</th>
+            <th width="2%" class="text-center">Nombre Rol</th>
+            <th width="2%" class="text-center">Sueldo</th>
+            <th width="2%" class="text-center">Fecha Ingreso</th>
+            <th width="2%" class="text-center">NombreSuc</th>
+            <th width="2%" class="text-center">DireccionSuc</th>
+            <th width="2%" class="text-center">TelefonoSuc</th>
+            <th width="2%" class="text-center">CiudadSuc</th>
+        </tr>
+        <tr *ngFor="let emp of empleados | async"> 
+        
+            <td width="2%" class="text-center"> {{emp._idEmpleado}}</td>
+            <td width="2%" class="text-center"> {{emp.Nombres}}</td>
+            <td width="2%" class="text-center"> {{emp.Apellidos}}</td>
+            <td width="2%" class="text-center"> {{emp.Direccion}}</td>
+            <td width="2%" class="text-center"> {{emp.Telefono}}</td>
+            <td width="2%" class="text-center"> {{emp.Fecha_Nacimiento}}</td>
+            <td width="2%" class="text-center"> {{emp.Email}}</td>
+            <td width="2%" class="text-center"> {{emp.Rol.Nombre}}</td>
+            <td width="2%" class="text-center"> {{emp.Rol.Sueldo}}</td>
+            <td width="2%" class="text-center"> {{emp.Rol.Fecha_ingre}}</td>
+            <td width="2%" class="text-center"> {{emp.Sucursal.NombreSuc}}</td>
+            <td width="2%" class="text-center"> {{emp.Sucursal.DireccionSuc}}</td>
+            <td width="2%" class="text-center"> {{emp.Sucursal.TelefonoSuc}}</td>
+            <td width="2%" class="text-center"> {{emp.Sucursal.CiudadSuc}}</td>
+        </tr>
+    </table>
+</div>
