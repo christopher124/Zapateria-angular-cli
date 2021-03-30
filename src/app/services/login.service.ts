@@ -8,8 +8,8 @@ import { getLocaleFirstDayOfWeek } from '@angular/common';
 export class LoginService {
 
   private url = "http://localhost:3000/usuarios/iniciosesion";
-  // private urlcli = "http://localhost:3000/nombre";
-  // private urlemp = "http://localhost:3000/nombre";
+  private urlcli = "http://localhost:3000/clientes/Nombres";
+  private urlemp = "http://localhost:3000/empleados/Nombres";
 
   constructor(private http:HttpClient,
     private router:Router) { }
@@ -22,18 +22,18 @@ export class LoginService {
       //metodo para indicar si existe la variable token en localStorage, solo retornara el contenido de la informacio
       return !!localStorage.getItem('token');
     }
-  //   esCliente(){
-  //     return !!localStorage.getItem('cliente');
-  //   }
-  //   erescliente(usuario:object){
-  //     return this.http.post<any>(this.urlcli,usuario);
-  //   }
-  //   esEmpleado(){
-  //     return !!localStorage.getItem('empleado')
-  // }
-  // eresEmpleado(usuario:object){
-  //   return this.http.post<any>(this.urlemp,usuario);
-  // }
+    esCliente(){
+    return !!localStorage.getItem('Cliente');
+     }
+        erescliente(usuario:object){
+     return this.http.post<any>(this.urlcli,usuario);
+    }
+   esEmpleado(){
+      return !!localStorage.getItem('Empleado')
+  }
+  eresEmpleado(usuario:object){
+    return this.http.post<any>(this.urlemp,usuario);
+ }
 
   cerrarSesion(){
       //eliminacion de variable localStorage esto elimina cualquier variable que este en la parte de aplicacion

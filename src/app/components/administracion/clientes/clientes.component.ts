@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ClienteService} from '../../../services/cliente.service';
+import {UsuarioService} from '../../../services/usuario.service';
 import {LoginService} from '../../../services/login.service'
-import { Router } from '@angular/router'
+// import { Router } from '@angular/router'
+import { ToastrService } from 'ngx-toastr'; 
 
 @Component({
   selector: 'app-clientes',
@@ -17,25 +19,45 @@ cliente = {
   Direccion:"",
   Email:"",
   Password:""
-
 }
-  constructor( public iniciosesionServicio: LoginService,  private clienteServico:ClienteService  ) { }
+
+usuarios:any;
+usuario = {
+  Email:"",
+  Password:""
+}
+
+  constructor( private toastr: ToastrService,
+    private usuarioservicio: UsuarioService, 
+    public iniciosesionServicio: LoginService,  
+    private clienteServico:ClienteService  ) { }
 
   ngOnInit(): void {
-    this.clientes=this.clienteServico.ConsultarTodoCliente();
-  }
+    this.ConsultarTodoClient();
+    }
 
   GuarClien(){
 this.clienteServico.GuardarCliente(this.cliente).subscribe(res =>{
-  alert("Cliente Registrado");
+  this.toastr.success('Cliente Registrado',)
 },
 err =>console.log(err));
+this.usuarioservicio.GuardarUsuario(this.usuario).subscribe(res =>{
+  this.toastr.success('Usuario Registrado',)
+},
+err =>console.log(err));
+this.limpiarCampos();
+this.ConsultarTodoClient();
   }
-
 
   ModCliente(){
 this.clienteServico.ModificarCliente(this.cliente).subscribe(res =>{
   alert("Cliente Modificado");
+
+        //limpieza de tabla
+        this.limpiarCampos();
+        //para hacer refrech
+        this.ConsultarTodoClient();
+
 },
 err=>console.log(err));
   }
@@ -43,6 +65,9 @@ err=>console.log(err));
   ElimCliente(){
 this.clienteServico.EliminarCliente(parseInt(this.cliente._idCliente)).subscribe(res=>{
 alert("Cliente Eliminado");
+
+this.limpiarCampos();
+
 },
 err=>console.log(err));
   }
@@ -53,6 +78,20 @@ this.clienteServico.ConsultarCliente(this.cliente.Nombres).subscribe(res=>{
 },
 err=>console.log(err)
 );
+  }
+  ConsultarTodoClient(){
+    this.clientes = this.clienteServico.ConsultarTodoCliente();
+
+  }
+
+  limpiarCampos(){
+    this.clientes =null;
+      this.cliente._idCliente="";
+      this.cliente.Nombres="";
+      this.cliente.Apellidos="";
+      this.cliente.Direccion="";
+      this.cliente.Email="";
+      this.cliente.Password="";
   }
   
 }

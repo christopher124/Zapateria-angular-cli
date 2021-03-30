@@ -27,18 +27,18 @@ export class LoginComponent implements OnInit {
       console.log(res);
       //invocar la palabra recervada localStorage
       localStorage.setItem('token',res);
-      // this.loginServices.erescliente(this.usuario).subscribe(res=>{
-      //   localStorage.setItem('cliente', res.nombre)
-      //   this.router.navigate(['/home']);
-      // }, err=>{
-      //   console.log(err);      
-      //   this.loginServices.eresEmpleado(this.usuario).subscribe(res=>{
-      //     localStorage.setItem('empleado',res.nombre);
-      //     localStorage.setItem('rol',res.rol);
-      //     this.router.navigate(['/home'])
-      //   }, err=>console.log(err));
+      this.loginServices.erescliente(this.usuario).subscribe(res=>{
+        localStorage.setItem('Clientes', res.Nombres)
+         this.router.navigate(['/home']);
+      }, err=>{
+        console.log(err);      
+       this.loginServices.eresEmpleado(this.usuario).subscribe(res=>{
+        localStorage.setItem('Empleados',res.Nombres);
+       localStorage.setItem('rol',res.Rol);
+       this.router.navigate(['/dashboard'])
+    }, err=>console.log(err));
 
-      // })
+       })
       this.toastr.success('Bienvenido',)
         
       //ruteo con variable para que mande a otro sitio

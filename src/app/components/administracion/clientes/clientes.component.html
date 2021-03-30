@@ -114,30 +114,22 @@
                                     <table class="table">
                                         <thead>
                                           <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nombres</th>
+                                            <th scope="col">Apellidos</th>
+                                            <th scope="col">Direccion</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Contraseña</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
+                                          <tr *ngFor="let cliene of clientes | async">
+                                            <th scope="row">{{cliene._idCliente}}</th>
+                                            <th scope="row">{{cliene.Nombres}}</th>
+                                            <th scope="row">{{cliene.Apellidos}}</th>
+                                            <th scope="row">{{cliene.Direccion}}</th>
+                                            <th scope="col">{{cliene.Email}}</th>
+                                            <th scope="col">{{cliene.Password}}</th>
                                           </tr>
                                         </tbody>
                                       </table>
@@ -188,41 +180,39 @@
             </div>
             <div class="modal-body">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1">ID</span>
+                    <input [(ngModel)]="cliente._idCliente" type="number" class="form-control" placeholder="IDCliente" aria-label="Username" aria-describedby="basic-addon1">
                   </div>
                   
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <span class="input-group-text" id="basic-addon2">@example.com</span>
+                    <span class="input-group-text" id="basic-addon1">Nombres</span>
+                    <input [(ngModel)]="cliente.Nombres" type="text" class="form-control" placeholder="Nombres" aria-label="Recipient's username" aria-describedby="basic-addon2">
                   </div>
-                  
-                  <label for="basic-url" class="form-label">Your vanity URL</label>
+
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                  </div>
-                  
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-text">.00</span>
+                    <span class="input-group-text" id="basic-addon1">Apellidos</span>
+                    <input  [(ngModel)]="cliente.Apellidos" type="text" class="form-control" placeholder="Apellidos" aria-label="Recipient's username" aria-describedby="basic-addon2">
                   </div>
                   
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    <span class="input-group-text" id="basic-addon1">Direccion</span>
+                    <input [(ngModel)]="cliente.Direccion" type="text" class="form-control" placeholder="Direccion" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  </div>
+                
+                
+                  <div class="input-group mb-3">
                     <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                    <input [(ngModel)]="cliente.Email" [(ngModel)]="usuario.Email" type="email" class="form-control" placeholder="Email" aria-label="Server">
                   </div>
-                  
-                  <div class="input-group">
-                    <span class="input-group-text">With textarea</span>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                    <input  [(ngModel)]="cliente.Password" [(ngModel)]="usuario.Password" type="password" class="form-control" placeholder="Contraseña" aria-label="Recipient's username" aria-describedby="basic-addon2">
                   </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="iniciosesionServicio.cerrarSesion()" class="btn btn-primary">finalizar sesión</button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="GuarClien()" class="btn btn-primary">finalizar sesión</button>
             </div>
           </div>
         </div>
