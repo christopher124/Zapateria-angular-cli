@@ -1,222 +1,489 @@
 <body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul
+      class="hola navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+      id="accordionSidebar"
+    >
+      <!-- Sidebar - Brand -->
+      <a
+        class="sidebar-brand d-flex align-items-center justify-content-center"
+        href="index.html"
+      >
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Panel de administracion</div>
+      </a>
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0" />
 
-        
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/dashboard']">
+          <i class="bi bi-speedometer"></i>
+          <span>Dashboard</span></a
+        >
+      </li>
 
-        <!-- Sidebar -->
-        <ul class=" hola navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block" />
 
-            <!-- Sidebar - Brand -->
-            <a class="  sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Panel de administracion</div>
-            </a>
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
 
+      <!-- Heading -->
+      <div class="sidebar-heading">Interface</div>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/clientes']">
+          <i class="bi bi-person-fill"></i>
+          <span>Clientes</span></a
+        >
+      </li>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]= "['/dashboard']">
-                    <i class="bi bi-speedometer"></i>
-                    <span>Dashboard</span></a>
-            </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/empleados']">
+          <i class="bi bi-person-fill"></i>
+          <span>Empleados</span></a
+        >
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/productos']">
+          <i class="bi bi-person-fill"></i>
+          <span>Empleados</span></a
+        >
+      </li>
 
-            <div class="sidebar-heading">
-                Interfaces
-            </div>
-
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]= "['/clientes']">
-                    <i class="bi bi-person-fill"></i>
-                    <span>Clientes</span></a>
-            </li>
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <!-- <div class="text-center d-none d-md-inline">
+      <!-- Sidebar Toggler (Sidebar) -->
+      <!-- <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div> -->
+    </ul>
+    <!-- End of Sidebar -->
 
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            
-   
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar -->
+        <nav
+          class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+        >
+          <!-- Sidebar Toggle (Topbar) -->
+          <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button> -->
 
-                    
+          <!-- Topbar Search -->
+          <form
+            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+          >
+            <img
+              src="../../../../assets/img/logo-empresabn.png"
+              width="70"
+              height="70"
+            />
+          </form>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <img src="../../../../assets/img/logo-empresabn.png" width="70" height="70">
-                    </form>
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+              >
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                  >Administracion</span
+                >
+                <img
+                  class="img-profile rounded-circle"
+                  src="../../../../assets/img/undraw_profile.svg"
+                />
+              </a>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+              <!-- Dropdown - User Information -->
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Christopher</span>
-                                <img class="img-profile rounded-circle"
-                                    src="../../../../assets/img/undraw_profile.svg">
-                        </a>
-                            
-                            <!-- Dropdown - User Information -->
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <li><a class="dropdown-item" href="#">
-                                    <i class="bi bi-person-fill"></i>
-                                    Perfil</a></li>
-                                <li><a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="bi bi-signpost-fill"></i>
-                                    Finalizar sesión</a></li>
-                              </ul>
-                        </li>
+                <li>
+                  <a
+                    type="button"
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    <i class="bi bi-signpost-fill"></i>
+                    Finalizar sesión</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Topbar -->
 
-                    </ul>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+          >
+            <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
+          </div>
 
-                </nav>
-                <!-- End of Topbar -->
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal2"
+            type="button"
+            class="btn btn-outline-primary btn-space"
+          >
+            Agregar
+          </button>
+          <br />
+          <br />
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cliene of clientes | async">
+                <th scope="row">{{ cliene._idCliente }}</th>
+                <th scope="row">{{ cliene.Nombres }}</th>
+                <th scope="row">{{ cliene.Apellidos }}</th>
+                <th scope="row">{{ cliene.Direccion }}</th>
+                <th scope="row">{{ cliene.Email }}</th>
+                <th scope="row">{{ cliene.Password }}</th>
+                <th>
+                  <i
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal3"
+                    type="button"
+                    class="bi bi-pencil"
+                  ></i>
+                  <div
+                  class="modal fade"
+                  id="exampleModal3"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel3"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Modificar
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"
+                            >ID</span
+                          >
+                          <input
+                            name="_idCliente"
+                            [(ngModel)]="cliene._idCliente"
+                            type="number"
+                            class="form-control"
+                            placeholder="IDCliente"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                          />
+                        </div>
 
-                                <!-- Begin Page Content -->
-                                <div class="container-fluid">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"
+                            >Nombres</span
+                          >
+                          <input
+                            name="Nombres"
+                            [(ngModel)]="cliene.Nombres"
+                            type="text"
+                            class="form-control"
+                            placeholder="Nombres"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                          />
+                        </div>
 
-                                    <!-- Page Heading -->
-                                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                        <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
-                                    </div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"
+                            >Apellidos</span
+                          >
+                          <input
+                            name="Apellidos"
+                            [(ngModel)]="cliene.Apellidos"
+                            type="text"
+                            class="form-control"
+                            placeholder="Apellidos"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                          />
+                        </div>
 
-                                    <button data-bs-toggle="modal" data-bs-target="#exampleModal2" type="button" class="btn btn-primary">Agregar</button>
-                                    <br>
-                                    <br>
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Nombres</th>
-                                            <th scope="col">Apellidos</th>
-                                            <th scope="col">Direccion</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Contraseña</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr *ngFor="let cliene of clientes | async">
-                                            <th scope="row">{{cliene._idCliente}}</th>
-                                            <th scope="row">{{cliene.Nombres}}</th>
-                                            <th scope="row">{{cliene.Apellidos}}</th>
-                                            <th scope="row">{{cliene.Direccion}}</th>
-                                            <th scope="col">{{cliene.Email}}</th>
-                                            <th scope="col">{{cliene.Password}}</th>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    
-                                </div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"
+                            >Direccion</span
+                          >
+                          <input
+                            name="Direccion"
+                            [(ngModel)]="cliene.Direccion"
+                            type="text"
+                            class="form-control"
+                            placeholder="Direccion"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                          />
+                        </div>
 
-            </div>
-            <!-- End of Main Content -->
+                        <div class="input-group mb-3">
+                          <span class="input-group-text">@</span>
+                          <input
+                            name="Email"
+                            [(ngModel)]="cliene.Email"
+                            type="email"
+                            class="form-control"
+                            placeholder="Email"
+                            aria-label="Server"
+                          />
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"
+                            >Contraseña</span
+                          >
+                          <input
+                            name="Password"
+                            [(ngModel)]="cliene.Password"
+                            type="password"
+                            class="form-control"
+                            placeholder="Contraseña"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                          />
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          data-bs-dismiss="modal"
+                          (click)="ModificarCliente(cliene)"
+                          class="btn btn-primary"
+                        >
+                          Modificar cliente
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <i
+                    (click)="ElimCliente(cliene._idCliente, cliene.Email)"
+                    type="button"
+                    class="bi-trash-fill"
+                  ></i>
+                </th>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!-- End of Content Wrapper -->
+      </div>
+      <!-- End of Main Content -->
     </div>
-    <!-- End of Page Wrapper -->
-    
+    <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-    
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="iniciosesionServicio.cerrarSesion()" class="btn btn-primary">finalizar sesión</button>
-            </div>
-          </div>
+  <!-- Logout Modal-->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Seleccione "Cerrar sesión" a continuación si está listo para finalizar
+          su sesión actual.
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="iniciosesionServicio.cerrarSesion()"
+            class="btn btn-primary"
+          >
+            finalizar sesión
+          </button>
         </div>
       </div>
+    </div>
+  </div>
 
-                <!-- agregar Modal-->
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">ID</span>
-                    <input [(ngModel)]="cliente._idCliente" type="number" class="form-control" placeholder="IDCliente" aria-label="Username" aria-describedby="basic-addon1">
-                  </div>
-                  
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Nombres</span>
-                    <input [(ngModel)]="cliente.Nombres" type="text" class="form-control" placeholder="Nombres" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  </div>
+  <!-- guardar Modal-->
+  <div
+    class="modal fade"
+    id="exampleModal2"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel2"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Guardar</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">ID</span>
+            <input
+              required
+              [(ngModel)]="cliente._idCliente"
+              type="number"
+              class="form-control"
+              placeholder="IDCliente"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
 
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Apellidos</span>
-                    <input  [(ngModel)]="cliente.Apellidos" type="text" class="form-control" placeholder="Apellidos" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  </div>
-                  
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Direccion</span>
-                    <input [(ngModel)]="cliente.Direccion" type="text" class="form-control" placeholder="Direccion" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  </div>
-                
-                
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">@</span>
-                    <input [(ngModel)]="cliente.Email" [(ngModel)]="usuario.Email" type="email" class="form-control" placeholder="Email" aria-label="Server">
-                  </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombres</span>
+            <input
+              required
+              [(ngModel)]="cliente.Nombres"
+              type="text"
+              class="form-control"
+              placeholder="Nombres"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
 
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input  [(ngModel)]="cliente.Password" [(ngModel)]="usuario.Password" type="password" class="form-control" placeholder="Contraseña" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="GuarClien()" class="btn btn-primary">finalizar sesión</button>
-            </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Apellidos</span>
+            <input
+              required
+              [(ngModel)]="cliente.Apellidos"
+              type="text"
+              class="form-control"
+              placeholder="Apellidos"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Direccion</span>
+            <input
+              required
+              [(ngModel)]="cliente.Direccion"
+              type="text"
+              class="form-control"
+              placeholder="Direccion"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input
+              required
+              [(ngModel)]="cliente.Email"
+              [(ngModel)]="usuario.Email"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Server"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Contraseña</span>
+            <input
+              required
+              [(ngModel)]="cliente.Password"
+              [(ngModel)]="usuario.Password"
+              type="password"
+              class="form-control"
+              placeholder="Contraseña"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
           </div>
         </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="GuarClien()"
+            class="btn btn-primary"
+          >
+            finalizar sesión
+          </button>
+        </div>
       </div>
+    </div>
+  </div>
 
-
+  <!-- modificar Modal-->
 </body>

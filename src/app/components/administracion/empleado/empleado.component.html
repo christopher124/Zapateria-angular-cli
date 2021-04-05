@@ -1,97 +1,655 @@
-<br>
-<h3 style="padding-left:550px">CLIENTES</h3>
-<div class="mx-auto" style="width: 250px">
-    ID:
-<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="empleado._idEmpleado">
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul
+      class="hola navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+      id="accordionSidebar"
+    >
+      <!-- Sidebar - Brand -->
+      <a
+        class="sidebar-brand d-flex align-items-center justify-content-center"
+        href="index.html"
+      >
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Panel de administracion</div>
+      </a>
 
-    Nombres:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Nombres">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0" />
 
-Apellidos:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Apellidos">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/dashboard']">
+          <i class="bi bi-speedometer"></i>
+          <span>Dashboard</span></a
+        >
+      </li>
 
-Direccion:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Direccion">
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block" />
 
-Telefono:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Telefono">
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
 
-Fecha_Nacimiento:
-<input type="date" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Fecha_Nacimiento">
+      <!-- Heading -->
+      <div class="sidebar-heading">Interface</div>
 
-Email:
-<input type="email" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Email">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/clientes']">
+          <i class="bi bi-person-fill"></i>
+          <span>Clientes</span></a
+        >
+      </li>
 
-Contrasenia:
-<input type="password" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Password">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/empleados']">
+          <i class="bi bi-person-fill"></i>
+          <span>Empleados</span></a
+        >
+      </li>
 
-Nombre:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Rol.Nombre">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/productos']">
+          <i class="bi bi-person-fill"></i>
+          <span>Empleados</span></a
+        >
+      </li>
 
-Sueldo:
-<input type="number" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Rol.Sueldo">
+      <!-- Sidebar Toggler (Sidebar) -->
+      <!-- <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div> -->
+    </ul>
+    <!-- End of Sidebar -->
 
-Fecha_Ingreso:
-<input type="date" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Rol.Fecha_ingre">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar -->
+        <nav
+          class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+        >
+          <!-- Sidebar Toggle (Topbar) -->
+          <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button> -->
 
-NombreSuc:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.NombreSuc">
+          <!-- Topbar Search -->
+          <form
+            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+          >
+            <img
+              src="../../../../assets/img/logo-empresabn.png"
+              width="70"
+              height="70"
+            />
+          </form>
 
-DireccionSuc:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.DireccionSuc">
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+              >
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                  >Administracion</span
+                >
+                <img
+                  class="img-profile rounded-circle"
+                  src="../../../../assets/img/undraw_profile.svg"
+                />
+              </a>
 
-TelefonoSuc:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.TelefonoSuc">
+              <!-- Dropdown - User Information -->
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                  <a
+                    type="button"
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    <i class="bi bi-signpost-fill"></i>
+                    Finalizar sesión</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Topbar -->
 
-CiudadSuc:
-<input type="text" class="form-control"  id="floatingInput" [(ngModel)]="empleado.Sucursal.CiudadSuc">
-</div>
-<br>
-<br>
-<div style="padding-left:450px;" > 
-<input type="button" class="btn btn-outline-success" value="Guardar" (click)="GuardaEmpleado()">
-<input type="button" class="btn btn-outline-danger" value="Eliminar"  (click)="EliminarEmpleado()">
-<input type="button" class="btn btn-outline-warning" value="Modificar"  (click)="ModificarEmpleado()">
-<input type="button" class="btn btn-outline-primary" value="Consultar"  (click)="ConsultarEmpleado()">
-<input type="button" class="btn btn-outline-primary" value="Consulta todo"  (click)="ConsultaTodoEmpleado()">
-</div>
-<br>
-<br>
-<br>
-<div>
-    <table class="table table-ligth table-bordered" >
-        <tr style="background-color:black;color:rgb(255, 255, 255);">
-            <th width="2%" class="text-center">ID</th>
-            <th width="2%" class="text-center">  Nombres</th>
-            <th width="2%" class="text-center">Apellidos</th>
-            <th width="2%" class="text-center">Direccion</th>
-            <th width="2%" class="text-center">Telefono</th>
-            <th width="2%" class="text-center">Fecha Nacimiento</th>
-            <th width="2%" class="text-center">Email</th>
-            <th width="2%" class="text-center">Nombre Rol</th>
-            <th width="2%" class="text-center">Sueldo</th>
-            <th width="2%" class="text-center">Fecha Ingreso</th>
-            <th width="2%" class="text-center">NombreSuc</th>
-            <th width="2%" class="text-center">DireccionSuc</th>
-            <th width="2%" class="text-center">TelefonoSuc</th>
-            <th width="2%" class="text-center">CiudadSuc</th>
-        </tr>
-        <tr *ngFor="let emp of empleados | async"> 
-        
-            <td width="2%" class="text-center"> {{emp._idEmpleado}}</td>
-            <td width="2%" class="text-center"> {{emp.Nombres}}</td>
-            <td width="2%" class="text-center"> {{emp.Apellidos}}</td>
-            <td width="2%" class="text-center"> {{emp.Direccion}}</td>
-            <td width="2%" class="text-center"> {{emp.Telefono}}</td>
-            <td width="2%" class="text-center"> {{emp.Fecha_Nacimiento}}</td>
-            <td width="2%" class="text-center"> {{emp.Email}}</td>
-            <td width="2%" class="text-center"> {{emp.Rol.Nombre}}</td>
-            <td width="2%" class="text-center"> {{emp.Rol.Sueldo}}</td>
-            <td width="2%" class="text-center"> {{emp.Rol.Fecha_ingre}}</td>
-            <td width="2%" class="text-center"> {{emp.Sucursal.NombreSuc}}</td>
-            <td width="2%" class="text-center"> {{emp.Sucursal.DireccionSuc}}</td>
-            <td width="2%" class="text-center"> {{emp.Sucursal.TelefonoSuc}}</td>
-            <td width="2%" class="text-center"> {{emp.Sucursal.CiudadSuc}}</td>
-        </tr>
-    </table>
-</div>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+          >
+            <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
+          </div>
+
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal2"
+            type="button"
+            class="btn btn-outline-primary btn-space"
+          >
+            Agregar
+          </button>
+          <br />
+          <br />
+          <table class="table table-responsive table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Sueldo</th>
+                <th scope="col">Fecha de ingreso</th>
+                <th scope="col">Nombre Sucursal asignado</th>
+                <th scope="col">Direccion Sucursal</th>
+                <th scope="col">Telefono Sucursal</th>
+                <th scope="col">Ciudad Sucursal</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emplea of empleados | async">
+                <th scope="row">{{ emplea._idEmpleado }}</th>
+                <th scope="row">{{ emplea.Nombres }}</th>
+                <th scope="row">{{ emplea.Apellidos }}</th>
+                <th scope="row">{{ emplea.Direccion }}</th>
+                <th scope="row">{{ emplea.Telefono }}</th>
+                <th scope="row">{{ emplea.Fecha_Nacimiento }}</th>
+                <th scope="row">{{ emplea.Email }}</th>
+                <th scope="row">{{ emplea.Password }}</th>
+                <th scope="row">{{ emplea.Rol.Nombre }}</th>
+                <th scope="row">{{ emplea.Rol.Sueldo }}</th>
+                <th scope="row">{{ emplea.Rol.Fecha_ingre }}</th>
+                <th scope="row">{{ emplea.Sucursal.NombreSuc }}</th>
+                <th scope="row">{{ emplea.Sucursal.DireccionSuc }}</th>
+                <th scope="row">{{ emplea.Sucursal.TelefonoSuc }}</th>
+                <th scope="row">{{ emplea.Sucursal.CiudadSuc }}</th>
+                <th>
+                  <i
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal3"
+                    type="button"
+                    class="bi bi-pencil"
+                  ></i>
+                  <div
+                    class="modal fade"
+                    id="exampleModal3"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel3"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Modificar
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body " >
+                          <form  >
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >ID</span
+                            >
+                          
+                            <input
+                              name="_idCliente"
+                              [(ngModel)]="emplea._idEmpleado"
+                              type="number"
+                              class="form-control"
+                              placeholder="IDCliente"
+                              aria-label="Username"
+                              aria-describedby="basic-addon1"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Nombres</span
+                            >
+                            <input
+                              name="Nombres"
+                              [(ngModel)]="emplea.Nombres"
+                              type="text"
+                              class="form-control"
+                              placeholder="Nombres"
+                              aria-label="Recipient's username"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Apellidos</span
+                            >
+                            <input
+                              name="Apellidos"
+                              [(ngModel)]="emplea.Apellidos"
+                              type="text"
+                              class="form-control"
+                              placeholder="Apellidos"
+                              aria-label="Recipient's username"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Direccion</span
+                            >
+                            <input
+                              name="Direccion"
+                              [(ngModel)]="emplea.Direccion"
+                              type="text"
+                              class="form-control"
+                              placeholder="Direccion"
+                              aria-label="Recipient's username"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text">@</span>
+                            <input
+                              name="Telefono"
+                              [(ngModel)]="emplea.Telefono"
+                              type="text"
+                              class="form-control"
+                              placeholder="Telefono del empleado"
+                              aria-label="Telefono del empleado"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Fecha de nacimiento</span
+                            >
+                            <input
+                              name="Fecha de nacimiento del empleado"
+                              [(ngModel)]="emplea.Fecha_Nacimiento"
+                              type="date"
+                              class="form-control"
+                              placeholder="Fecha de nacimiento del empleado"
+                              aria-label="Fecha de nacimiento del empleado"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Email</span
+                            >
+                            <input
+                              name="Correo del empleado"
+                              [(ngModel)]="emplea.Email"
+                              type="email"
+                              class="form-control"
+                              placeholder="Correo del empleado"
+                              aria-label="Correo del empleado"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Contrase;a</span
+                            >
+                            <input
+                              name="Contrase del empleado"
+                              [(ngModel)]="emplea.Password"
+                              type="password"
+                              class="form-control"
+                              placeholder="Contrase del empleado"
+                              aria-label="Contrase del empleado"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <label
+                              class="input-group-text"
+                              for="inputGroupSelect01"
+                              >Rol</label
+                            >
+                            <select
+                              
+                              [(ngModel)]="emplea.Rol.Nombre"
+                              class="form-select"
+                              id="inputGroupSelect01"
+                            >
+                              <option selected>Administrador</option>
+                              <option value="Gerente">Gerente</option>
+                            </select>
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Rol</span
+                            >
+                            <input
+                              name="Sueldo"
+                              
+                              [(ngModel)]="emplea.Rol.Sueldo"
+                              type="number"
+                              class="form-control"
+                              placeholder="Sueldo del empleado"
+                              aria-label="Sueldo del empleado"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Fecha de ingreso</span
+                            >
+                            <input
+                              name="Fecha de ingreso"
+                              [(ngModel)]="emplea.Rol.Fecha_ingre"
+                              type="date"
+                              class="form-control"
+                              placeholder="Fecha de ingreso del empleado"
+                              aria-label="Fecha de ingreso del empleado"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Nombre de sucursal</span
+                            >
+                            <input
+                              name="Sueldo"
+                              [(ngModel)]="emplea.Sucursal.NombreSuc"
+                              type="text"
+                              class="form-control"
+                              placeholder="Nombre de sucursal"
+                              aria-label="Nombre de sucursal"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Dirrecion de sucursal</span
+                            >
+                            <input
+                              name="Sueldo"
+                              [(ngModel)]="emplea.Sucursal.DireccionSuc"
+                              type="text"
+                              class="form-control"
+                              placeholder="Dirrecion de sucursal"
+                              aria-label="Dirrecion de sucursal"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Telefono de sucursal</span
+                            >
+                            <input
+                              name="Sueldo"
+                              [(ngModel)]="emplea.Sucursal.TelefonoSuc"
+                              type="text"
+                              class="form-control"
+                              placeholder="Telefono de sucursal"
+                              aria-label="Telefono de sucursal"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                              >Ciudad de sucursal</span
+                            >
+                            <input
+                              name="Sueldo"
+                              [(ngModel)]="emplea.Sucursal.CiudadSuc"
+                              type="text"
+                              class="form-control"
+                              placeholder="Ciudad de sucursal"
+                              aria-label="Ciudad de sucursal"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+                          <button
+                          type="button"
+                          data-bs-dismiss="modal"
+                          (click)="ModificarEmpleado(emplea)"
+                          class="btn btn-primary"
+                        >
+                          Modificar cliente
+                        </button>
+                        </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            data-bs-dismiss="modal"
+                            (click)="ModificarEmpleado(emplea)"
+                            class="btn btn-primary"
+                          >
+                            Modificar cliente
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <i
+                    (click)="ElimEmpleado(emplea._idEmpleado)"
+                    type="button"
+                    class="bi-trash-fill"
+                  ></i>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- End of Main Content -->
+    </div>
+    <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Seleccione "Cerrar sesión" a continuación si está listo para finalizar
+          su sesión actual.
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="iniciosesionServicio.cerrarSesion()"
+            class="btn btn-primary"
+          >
+            finalizar sesión
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- guardar Modal-->
+  <!-- <div
+    class="modal fade"
+    id="exampleModal2"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel2"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Guardar</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">ID</span>
+            <input
+              required
+              [(ngModel)]="cliente._idCliente"
+              type="number"
+              class="form-control"
+              placeholder="IDCliente"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombres</span>
+            <input
+              required
+              [(ngModel)]="cliente.Nombres"
+              type="text"
+              class="form-control"
+              placeholder="Nombres"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Apellidos</span>
+            <input
+              required
+              [(ngModel)]="cliente.Apellidos"
+              type="text"
+              class="form-control"
+              placeholder="Apellidos"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Direccion</span>
+            <input
+              required
+              [(ngModel)]="cliente.Direccion"
+              type="text"
+              class="form-control"
+              placeholder="Direccion"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input
+              required
+              [(ngModel)]="cliente.Email"
+              [(ngModel)]="usuario.Email"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Server"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Contraseña</span>
+            <input
+              required
+              [(ngModel)]="cliente.Password"
+              [(ngModel)]="usuario.Password"
+              type="password"
+              class="form-control"
+              placeholder="Contraseña"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="GuardaEmpleado()"
+            class="btn btn-primary"
+          >
+            finalizar sesión
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- modificar Modal-->
+</body>

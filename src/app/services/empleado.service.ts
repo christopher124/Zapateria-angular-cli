@@ -6,26 +6,26 @@ import {HttpClient} from '@angular/common/http';
 })
 export class EmpleadoService {
   private url = "http://localhost:3000/empleados";
-  constructor(private htpp:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   GuardarEmp(empleado:object){
-    return this.htpp.post<any>(this.url,empleado);
+    return this.http.post<any>(this.url,empleado);
 }
 
 ModificarEmp(empleado:object){
-  return this.htpp.put<any>(this.url,empleado);
+  return this.http.put<any>(this.url,empleado);
 }
 
 EliminarEmp(_idEmpleado:Number){
-    return this.htpp.delete<any>(this.url + "/" + _idEmpleado);
+    return this.http.delete<any>(`${this.url}/${_idEmpleado}`);
 }
 
 ConsultarEmp(Nombres:String){
-  return this.htpp.get<any>(this.url + "/"+ Nombres);
+  return this.http.get<any>(this.url + "/"+ Nombres);
 
 }
 
 ConsultarTodoEmp(){
-return this.htpp.get<any>(this.url);
+return this.http.get<any>(this.url);
 }
 }

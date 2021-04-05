@@ -30,12 +30,10 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 import {ButtonModule} from 'primeng/button';
 import { EmpleadoComponent } from './components/administracion/empleado/empleado.component';
 import { ProductosComponent } from './components/administracion/productos/productos.component';
+import { DashboardComponent } from './components/administracion/dashboard/dashboard.component';
 // import 
 
-import {MatTableModule} from '@angular/material/table';
-import {SplitterModule} from 'primeng/splitter';
-import {MegaMenuModule} from 'primeng/megamenu';
-import { DashboardComponent } from './components/administracion/dashboard/dashboard.component';
+
 
 
 
@@ -69,9 +67,6 @@ import { DashboardComponent } from './components/administracion/dashboard/dashbo
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatTableModule,
-    SplitterModule,
-    MegaMenuModule
   ],
   providers: [ProductsService,LoginService,ProductoService,EmpleadoService,ClienteService],
   bootstrap: [AppComponent],
