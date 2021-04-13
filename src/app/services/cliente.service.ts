@@ -8,20 +8,20 @@ export class ClienteService {
   private url = 'http://localhost:3000/clientes';
   constructor(private http: HttpClient) {}
 
-  GuardarCliente(cliente: object) {
+  GuardarCliente(cliente: Object) {
     return this.http.post<any>(this.url, cliente);
   }
 
-  ModificarCliente(cliente: object){
+  ModificarCliente(cliente: Object ){
     return this.http.put<any>(this.url,cliente);
   }
 
-  EliminarCliente(_idcliente: Number) {
-    return this.http.delete<any>(`${this.url}/${_idcliente}`);
+  EliminarCliente(email: string) {
+    return this.http.delete<any>(`${this.url}/${email}`);
   }
 
   ConsultarCliente(Nombres: String) {
-    return this.http.get<any>(this.url + '/' + Nombres);
+    return this.http.get<any>(`${this.url}/${Nombres}`);
   }
 
   ConsultarTodoCliente() {

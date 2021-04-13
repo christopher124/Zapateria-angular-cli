@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmpleadoService {
-  private url = "http://localhost:3000/empleados";
+  private url = "http://localhost:3000/empleado";
   constructor(private http:HttpClient) { }
 
   GuardarEmp(empleado:object){
@@ -17,7 +17,7 @@ ModificarEmp(empleado:object){
 }
 
 EliminarEmp(_idEmpleado:Number){
-    return this.http.delete<any>(`${this.url}/${_idEmpleado}`);
+    return this.http.delete<any>(this.url + "/"+ _idEmpleado);
 }
 
 ConsultarEmp(Nombres:String){

@@ -9,12 +9,12 @@
       <!-- Sidebar - Brand -->
       <a
         class="sidebar-brand d-flex align-items-center justify-content-center"
-        href="index.html"
+        [routerLink]="['/dashboard']"
       >
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i style="font-size: 1.5rem;" class="bi bi-speedometer"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Panel de administracion</div>
+        <div class="sidebar-brand-text mx-3">Panel de administración</div>
       </a>
 
       <!-- Divider -->
@@ -23,7 +23,7 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/dashboard']">
-          <i class="bi bi-speedometer"></i>
+          <i style="font-size: 1.5rem;" class="bi bi-speedometer"></i>
           <span>Dashboard</span></a
         >
       </li>
@@ -35,26 +35,26 @@
       <hr class="sidebar-divider" />
 
       <!-- Heading -->
-      <div class="sidebar-heading">Interface</div>
+      <div class="sidebar-heading">Interfaz</div>
 
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/clientes']">
-          <i class="bi bi-person-fill"></i>
+          <i style="font-size: 1.5rem;"class="bi bi-person-fill"></i>
           <span>Clientes</span></a
         >
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/empleados']">
-          <i class="bi bi-person-fill"></i>
+          <i style="font-size: 1.5rem;"class="bi bi-person-badge"></i>
           <span>Empleados</span></a
         >
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/productos']">
-          <i class="bi bi-person-fill"></i>
-          <span>Empleados</span></a
+          <i style="font-size: 1.5rem;"class="bi bi-bag-fill"></i>
+          <span>Productos</span></a
         >
       </li>
 
@@ -100,7 +100,7 @@
                 type="button"
               >
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                  >Administracion</span
+                  >Administración</span
                 >
                 <img
                   class="img-profile rounded-circle"
@@ -118,7 +118,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
-                    <i class="bi bi-signpost-fill"></i>
+                  <i style="font-size: 1.5rem;" class="bi bi-signpost-fill"></i>
                     Finalizar sesión</a
                   >
                 </li>
@@ -150,10 +150,9 @@
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellidos</th>
-                <th scope="col">Direccion</th>
+                <th scope="col">Dirección</th>
                 <th scope="col">Email</th>
                 <th scope="col">Contraseña</th>
                 <th scope="col">Acciones</th>
@@ -161,7 +160,6 @@
             </thead>
             <tbody>
               <tr *ngFor="let cliene of clientes | async">
-                <th scope="row">{{ cliene._idCliente }}</th>
                 <th scope="row">{{ cliene.Nombres }}</th>
                 <th scope="row">{{ cliene.Apellidos }}</th>
                 <th scope="row">{{ cliene.Direccion }}</th>
@@ -173,6 +171,7 @@
                     data-bs-target="#exampleModal3"
                     type="button"
                     class="bi bi-pencil"
+                    (click)="ConsulClient(cliene.Nombres)"
                   ></i>
                   <div
                   class="modal fade"
@@ -195,20 +194,6 @@
                         ></button>
                       </div>
                       <div class="modal-body">
-                        <div class="input-group mb-3">
-                          <span class="input-group-text" id="basic-addon1"
-                            >ID</span
-                          >
-                          <input
-                            name="_idCliente"
-                            [(ngModel)]="cliene._idCliente"
-                            type="number"
-                            class="form-control"
-                            placeholder="IDCliente"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                          />
-                        </div>
 
                         <div class="input-group mb-3">
                           <span class="input-group-text" id="basic-addon1"
@@ -216,10 +201,10 @@
                           >
                           <input
                             name="Nombres"
-                            [(ngModel)]="cliene.Nombres"
+                            [(ngModel)]="clientes.Nombres"
                             type="text"
                             class="form-control"
-                            placeholder="Nombres"
+                            placeholder="Ingrese el nombre del cliente"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                           />
@@ -231,10 +216,10 @@
                           >
                           <input
                             name="Apellidos"
-                            [(ngModel)]="cliene.Apellidos"
+                            [(ngModel)]="clientes.Apellidos"
                             type="text"
                             class="form-control"
-                            placeholder="Apellidos"
+                            placeholder="Ingrese el apellido del cliente"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                           />
@@ -242,27 +227,27 @@
 
                         <div class="input-group mb-3">
                           <span class="input-group-text" id="basic-addon1"
-                            >Direccion</span
+                            >Dirección</span
                           >
                           <input
                             name="Direccion"
-                            [(ngModel)]="cliene.Direccion"
+                            [(ngModel)]="clientes.Direccion"
                             type="text"
                             class="form-control"
-                            placeholder="Direccion"
+                            placeholder="ingrese el apellidos del dirección"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                           />
                         </div>
 
                         <div class="input-group mb-3">
-                          <span class="input-group-text">@</span>
+                          <span class="input-group-text">Correo</span>
                           <input
                             name="Email"
-                            [(ngModel)]="cliene.Email"
+                            [(ngModel)]="clientes.Email"
                             type="email"
                             class="form-control"
-                            placeholder="Email"
+                            placeholder="ingrese el correo del cliente"
                             aria-label="Server"
                           />
                         </div>
@@ -273,10 +258,10 @@
                           >
                           <input
                             name="Password"
-                            [(ngModel)]="cliene.Password"
+                            [(ngModel)]="clientes.Password"
                             type="password"
                             class="form-control"
-                            placeholder="Contraseña"
+                            placeholder="ingrese la contraseña del cliente"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                           />
@@ -286,7 +271,7 @@
                         <button
                           type="button"
                           data-bs-dismiss="modal"
-                          (click)="ModificarCliente(cliene)"
+                          
                           class="btn btn-primary"
                         >
                           Modificar cliente
@@ -296,7 +281,7 @@
                   </div>
                 </div>
                   <i
-                    (click)="ElimCliente(cliene._idCliente, cliene.Email)"
+                    (click)="ElimCliente(cliene.Email)"
                     type="button"
                     class="bi-trash-fill"
                   ></i>
@@ -383,18 +368,6 @@
           ></button>
         </div>
         <div class="modal-body">
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">ID</span>
-            <input
-              required
-              [(ngModel)]="cliente._idCliente"
-              type="number"
-              class="form-control"
-              placeholder="IDCliente"
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </div>
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nombres</span>
@@ -403,7 +376,7 @@
               [(ngModel)]="cliente.Nombres"
               type="text"
               class="form-control"
-              placeholder="Nombres"
+              placeholder="Ingrese el nombre del cliente"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
@@ -416,34 +389,34 @@
               [(ngModel)]="cliente.Apellidos"
               type="text"
               class="form-control"
-              placeholder="Apellidos"
+              placeholder="ingrese el apellido del cliente"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
           </div>
 
           <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Direccion</span>
+            <span class="input-group-text" id="basic-addon1">Dirección</span>
             <input
               required
               [(ngModel)]="cliente.Direccion"
               type="text"
               class="form-control"
-              placeholder="Direccion"
+              placeholder="Ingrese la dirección del cliente"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
           </div>
 
           <div class="input-group mb-3">
-            <span class="input-group-text">@</span>
+            <span class="input-group-text">Correo</span>
             <input
               required
               [(ngModel)]="cliente.Email"
               [(ngModel)]="usuario.Email"
               type="email"
               class="form-control"
-              placeholder="Email"
+              placeholder="Ingrese la correo del cliente"
               aria-label="Server"
             />
           </div>
@@ -456,7 +429,7 @@
               [(ngModel)]="usuario.Password"
               type="password"
               class="form-control"
-              placeholder="Contraseña"
+              placeholder="Ingrese la contraseña del cliente"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
@@ -484,6 +457,4 @@
       </div>
     </div>
   </div>
-
-  <!-- modificar Modal-->
 </body>

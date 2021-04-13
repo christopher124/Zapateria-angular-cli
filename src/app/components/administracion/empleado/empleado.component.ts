@@ -55,24 +55,21 @@ export class EmpleadoComponent implements OnInit {
     this.ConsultarTodoEmpleado();
   }
 
-  ModificarEmpleado(emplea: Object) {
-    this.empleadoServicio.ModificarEmp(emplea).subscribe(
-      (res) => {
-        this.toastr.success('Empleado Modificado');
-      },
-      (err) => console.log(err)
-    );
-    this.ConsultarTodoEmpleado();
+  ModificarEmpleado(emplea: object) {
+    this.empleadoServicio.ModificarEmp(emplea)
+    console.log(emplea);
+    
   }
 
   ElimEmpleado(_idEmpleado: Number) {
     this.empleadoServicio.EliminarEmp(_idEmpleado).subscribe(
       (res) => {
         this.toastr.success('Empleado Eliminado');
+        this.ConsultarTodoEmpleado();
       },
       (err) => console.log(err)
     );
-    this.ConsultarTodoEmpleado();
+    
   }
 
   ConsulEmpleado() {

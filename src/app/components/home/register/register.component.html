@@ -1,48 +1,131 @@
 <body>
-<form class="formulario" method="POST" >
-
-    <h1> Registrate </h1>
-    <br><br><br>
+  <form class="formulario" (ngSubmit)="add()" #Forma="ngForm">
+    <h1>Registrate</h1>
+    <br /><br /><br />
     <div class="contenedor">
-
-        <div class="input-contenedor">
-            <i class="icon-user"></i>
-            <input type="text" placeholder="Nombre Completo" name="Nombre" id="Nombre" onkeypress="return soloLetras(event)">
+      <label for="">Nombre</label>
+      <div class="input-contenedor">
+        <input
+          required
+          type="text"
+          placeholder="Nombre"
+          name="name"
+          #name="ngModel"
+          class="form-control"
+          [ngClass]="{ 'is-valid': name.valid, 'is-invalid': name.invalid }"
+          [(ngModel)]="cliente.Nombres"
+          id="name"
+        />
+      </div>
+      <label for="">Apellidos</label>
+      <div class="input-contenedor">
+        <i class="icon-user"></i>
+        <input
+          required
+          type="text"
+          placeholder="Ingresa tus apellidos"
+          name="lastname"
+          #lastname="ngModel"
+          class="form-control"
+          [ngClass]="{
+            'is-valid': lastname.valid,
+            'is-invalid': lastname.invalid
+          }"
+          [(ngModel)]="cliente.Apellidos"
+          id="lastname"
+        />
+      </div>
+      <label for="">Dirección</label>
+      <div class="input-contenedor">
+        <i class="icon-user"></i>
+        <input
+          required
+          type="text"
+          placeholder="Ingresa tu dirección"
+          name="lastname"
+          #lastname="ngModel"
+          class="form-control"
+          [ngClass]="{
+            'is-valid': lastname.valid,
+            'is-invalid': lastname.invalid
+          }"
+          [(ngModel)]="cliente.Direccion"
+          id="lastname"
+        />
+      </div>
+      <label for="">Dirección de correo</label>
+      <div class="input-contenedor">
+        <i class="icon-map"></i>
+        <input
+          required
+          pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+          type="text"
+          placeholder="Ingresa tus apellidos"
+          name="email"
+          #email="ngModel"
+          class="form-control"
+          [ngClass]="{ 'is-valid': email.valid, 'is-invalid': email.invalid }"
+          [(ngModel)]="usuario.Email"
+          [(ngModel)]="cliente.Email"
+          id="email"
+        />
+        <div class="alert alert-danger" *ngIf="email.invalid && email.dirty">
+          <div *ngIf="email.errors && email.errors.pattern">
+            El correo electronico no sigue el formato correcto. Sigue este
+            ejemplo: ejemplo@hotmail.com
+          </div>
         </div>
-
-        <div class="input-contenedor">
-            <i class="icon-map"></i>
-            <input type="text" placeholder="Direccion Completa" name="Direccion" id="Direccion" onkeypress="return soloLetras(event)">
+      </div>
+      <label for="">Fecha de nacimiento</label>
+      <label for="">Contraseña</label>
+      <div class="input-contenedor">
+        <i class="icon-key"></i>
+        <input
+          required
+          type="password"
+          placeholder="****"
+          name="password"
+          #password="ngModel"
+          class="form-control"
+          [ngClass]="{
+            'is-valid': password.valid,
+            'is-invalid': password.invalid
+          }"
+          [(ngModel)]="usuario.Password"
+          [(ngModel)]="cliente.Password"
+          id="password"
+          minlength="6"
+        />
+      </div>
+      <div class="alert alert-danger" role="alert">
+        <div *ngIf="password.errors && password.errors.minlength">
+          La contraseña debe de ser minimo 6 carateres
         </div>
-
-        <div class="input-contenedor">
-            <i class="icon-mail"></i>
-            <input type="email" placeholder="Correo Electronico" name="Correo" id="Correo" onkeypress="return Correo(event)">
-        </div>
-
-        <div class="input-contenedor">
-            <i class="icon-phone-circled"></i>
-            <input type="number" placeholder="Telefono" name="Telefono" id="Telefono">
-        </div>
-
-        <div class="input-contenedor">
-            <i class="icon-key"></i>
-            <input type="password" placeholder="Contraseña" name="Pass" id="Pass">
-        </div>
-       <!-- <center> <?php echo isset($message)? $message :''; ?> </center> -->
-     <br>
-        </div>	
-        <input type="submit" value="Registrate" class="button">
-        <br><br>
-        <p>
-            Al registrarte, aceptas nuestras condiciones de uso y Avisos de 
-            privacidad.
-        </p>
-        <br>
-        <p>
-            ¿Ya tienes cuenta? <a class="link" [routerLink]= "['/login']"> Iniciar sesión</a>
-        </p>
-        <br>
-        
-</form>
+      </div>
+      <br />
+    </div>
+    <input
+      [disabled]="!Forma.valid"
+      type="submit"
+      value="Registrate"
+      class="signup-btn"
+    />
+    <br /><br />
+    <p>
+      Al registrarte, aceptas nuestras condiciones de uso y Avisos de
+      privacidad.
+    </p>
+    <br />
+    <p>
+      ¿Ya tienes cuenta?
+      <a
+        class="link"
+        [routerLink]="['/iniciosesion']"
+        routerLinkActive="router-link-active"
+      >
+        Iniciar sesión</a
+      >
+    </p>
+    <br />
+  </form>
 </body>

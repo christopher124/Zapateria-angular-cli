@@ -17,8 +17,8 @@ export class ProductoService {
     return this.htpp.put<any>(this.url,producto);
   }
 
-  EliminarProduc(_idProduc:Number){
-      return this.htpp.delete<any>(this.url + "/" + _idProduc);
+  EliminarProduc(_idProducto:Number){
+      return this.htpp.delete<any>(this.url + "/" + _idProducto);
   }
 
   ConsultarProduc(Nombre:String){

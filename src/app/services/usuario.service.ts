@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private url = "http://localhost:3000/usuarios";
+  private url = "http://localhost:3000/usuario";
   constructor(private htpp:HttpClient) { }
 
   GuardarUsuario(usuario:object){

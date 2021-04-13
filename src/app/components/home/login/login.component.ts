@@ -28,13 +28,13 @@ export class LoginComponent implements OnInit {
       //invocar la palabra recervada localStorage
       localStorage.setItem('token',res);
       this.loginServices.erescliente(this.usuario).subscribe(res=>{
-        localStorage.setItem('Clientes', res.Nombres)
+        localStorage.setItem('clientes', res.Nombres)
          this.router.navigate(['/home']);
       }, err=>{
         console.log(err);      
        this.loginServices.eresEmpleado(this.usuario).subscribe(res=>{
-        localStorage.setItem('Empleados',res.Nombres);
-       localStorage.setItem('rol',res.Rol);
+        localStorage.setItem('empleados',res.Nombres);
+       localStorage.setItem('rol',res.Rol.Nombre);
        this.router.navigate(['/dashboard'])
     }, err=>console.log(err));
 

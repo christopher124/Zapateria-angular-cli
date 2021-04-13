@@ -31,6 +31,7 @@ import {ButtonModule} from 'primeng/button';
 import { EmpleadoComponent } from './components/administracion/empleado/empleado.component';
 import { ProductosComponent } from './components/administracion/productos/productos.component';
 import { DashboardComponent } from './components/administracion/dashboard/dashboard.component';
+import { ShopComponent } from './components/clients/shop/shop.component';
 // import 
 
 
@@ -53,7 +54,8 @@ import { DashboardComponent } from './components/administracion/dashboard/dashbo
     ClientesComponent,
     EmpleadoComponent,
     ProductosComponent,
-    DashboardComponent
+    DashboardComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,9 @@ import { getLocaleFirstDayOfWeek } from '@angular/common';
 })
 export class LoginService {
 
-  private url = "http://localhost:3000/usuarios/iniciosesion";
-  private urlcli = "http://localhost:3000/clientes/Nombres";
-  private urlemp = "http://localhost:3000/empleados/Nombres";
+  private url = "http://localhost:3000/usuario/iniciosesion";
+  private urlcli = "http://localhost:3000/cliente/Nombres";
+  private urlemp = "http://localhost:3000/empleado/Nombres";
 
   constructor(private http:HttpClient,
     private router:Router) { }
@@ -25,15 +25,19 @@ export class LoginService {
     esCliente(){
     return !!localStorage.getItem('Cliente');
      }
-        erescliente(usuario:object){
-     return this.http.post<any>(this.urlcli,usuario);
+        erescliente(cliente:object){
+     return this.http.post<any>(this.urlcli,cliente);
     }
    esEmpleado(){
       return !!localStorage.getItem('Empleado')
   }
-  eresEmpleado(usuario:object){
-    return this.http.post<any>(this.urlemp,usuario);
+  eresEmpleado(empleado:object){
+    return this.http.post<any>(this.urlemp,empleado);
  }
+
+ ereEmpleado(nombres:string){
+  return this.http.post<any>(this.urlemp,nombres);
+}
 
   cerrarSesion(){
       //eliminacion de variable localStorage esto elimina cualquier variable que este en la parte de aplicacion

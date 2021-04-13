@@ -16,7 +16,6 @@ import { ToastrService } from 'ngx-toastr';
 export class ClientesComponent implements OnInit {
   clientes: any;
   cliente = {
-    _idCliente: '',
     Nombres: '',
     Apellidos: '',
     Direccion: '',
@@ -55,35 +54,43 @@ export class ClientesComponent implements OnInit {
     );
     this.limpiarCampos();
     this.ConsultarTodoClient();
+    return;
   }
 
-  ModificarCliente(cliene : Object){
+  ModificarCliente(cliene : object){
 this.clienteServico.ModificarCliente(cliene).subscribe(
   (res) => {
     this.toastr.success('Cliente Modificado');
   },
   (err) => console.log(err)
+  
 );
+this.ConsultarTodoClient();
+return;
+
   }
 
-  ElimCliente(_idCliente: Number, Email: String) {
-    this.clienteServico.EliminarCliente(_idCliente).subscribe(
+  ElimCliente(Email: string) {
+    this.clienteServico.EliminarCliente(Email).subscribe(
       (res) => {
         this.toastr.success('Cliente Eliminado');
+        this.ConsultarTodoClient();
       },
       (err) => console.log(err)
     );
     this.usuarioservicio.EliminarUsuario(Email).subscribe(
       (res) => {
         this.toastr.success('Usuario Eliminado');
+        this.ConsultarTodoClient();
       },
       (err) => console.log(err)
     );
-    this.ConsultarTodoClient();
+   
+    
   }
 
-  ConsulClient() {
-    this.clienteServico.ConsultarCliente(this.cliente.Nombres).subscribe(
+  ConsulClient(Nombres: string) {
+    this.clienteServico.ConsultarCliente(Nombres).subscribe(
       (res) => {
         this.cliente = res;
       },
@@ -92,11 +99,11 @@ this.clienteServico.ModificarCliente(cliene).subscribe(
   }
   ConsultarTodoClient() {
     this.clientes = this.clienteServico.ConsultarTodoCliente();
+    return;
   }
 
   limpiarCampos() {
     this.clientes = null;
-    this.cliente._idCliente = '';
     this.cliente.Nombres = '';
     this.cliente.Apellidos = '';
     this.cliente.Direccion = '';

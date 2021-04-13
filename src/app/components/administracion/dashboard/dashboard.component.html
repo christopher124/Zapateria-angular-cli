@@ -3,18 +3,18 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul
-      class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+      class="hola navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
       <!-- Sidebar - Brand -->
       <a
         class="sidebar-brand d-flex align-items-center justify-content-center"
-        href="index.html"
+        [routerLink]="['/dashboard']"
       >
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Panel de administracion</div>
+          <i style="font-size: 1.5rem;" class="bi bi-speedometer"></i>
+                </div>
+        <div class="sidebar-brand-text mx-3">Panel de administración</div>
       </a>
 
       <!-- Divider -->
@@ -23,7 +23,7 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/dashboard']">
-          <i class="bi bi-speedometer"></i>
+          <i style="font-size: 1.5rem;" class="bi bi-speedometer"></i>
           <span>Dashboard</span></a
         >
       </li>
@@ -35,26 +35,26 @@
       <hr class="sidebar-divider" />
 
       <!-- Heading -->
-      <div class="sidebar-heading">Interface</div>
+      <div class="sidebar-heading">Interfaz</div>
 
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/clientes']">
-          <i class="bi bi-person-fill"></i>
+          <i style="font-size: 1.5rem;"class="bi bi-person-fill"></i>
           <span>Clientes</span></a
         >
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/empleados']">
-          <i class="bi bi-person-fill"></i>
+          <i style="font-size: 1.5rem;"class="bi bi-person-badge"></i>
           <span>Empleados</span></a
         >
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/productos']">
-          <i class="bi bi-person-fill"></i>
-          <span>Empleados</span></a
+          <i style="font-size: 1.5rem;"class="bi bi-bag-fill"></i>
+          <span>Productos</span></a
         >
       </li>
 
@@ -100,7 +100,7 @@
                 type="button"
               >
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                  >Administracion</span
+                  >Administración</span
                 >
                 <img
                   class="img-profile rounded-circle"
@@ -110,6 +110,7 @@
 
               <!-- Dropdown - User Information -->
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
                 <li>
                   <a
                     type="button"
@@ -117,7 +118,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
-                    <i class="bi bi-door-open-fill" style="font-size: 1rem"></i>
+                  <i style="font-size: 1.5rem;" class="bi bi-signpost-fill"></i>
                     Finalizar sesión</a
                   >
                 </li>
@@ -135,6 +136,17 @@
           >
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
           </div>
+
+          <img src="../../../../assets/img/bot.png" width="55px" height="55px" alt=""> <p style="font-size: 1.4rem;">Que tal bienvenido al sistema de administración, en este apartado 
+            podras encontrar clientes empleados y productos los cuales podras
+            monitoriar cada apartado.
+            En el lado izquierdo podras encontrar los diferentes apartados para hacer modificaciones necesarias.
+
+          </p>
+
+          <br />
+          <br />
+
         </div>
       </div>
       <!-- End of Main Content -->
@@ -193,4 +205,6 @@
       </div>
     </div>
   </div>
+
+  <!-- guardar Modal-->
 </body>

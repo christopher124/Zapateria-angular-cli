@@ -7,8 +7,16 @@ import {LoginService} from '../../../services/login.service'
   styleUrls: ['../../../../assets/css/sb-admin-2.min.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(public iniciosesionServicio: LoginService) { }
+  usuarios: any;
+  usuario = {
+    Nombres: '',
+  };
+  constructor(public iniciosesionServicio: LoginService) { 
+    this.iniciosesionServicio.ereEmpleado(this.usuario.Nombres).subscribe(result =>{
+      console.log(result);
+      
+    })
+  }
 
   ngOnInit(): void {
   }

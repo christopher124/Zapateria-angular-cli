@@ -18,7 +18,7 @@ export class GuardiaRolGuard implements CanActivate {
      return true;
    }
     else{
-      this.router.navigate(['/home']);
+      this.router.navigate(['/tienda']);
      return false;
   }
  }
