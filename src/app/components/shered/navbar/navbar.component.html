@@ -41,7 +41,7 @@
       </ul>
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <ul class="nav-item" routerLinkActive="active">
-          <li>
+          <li class="nav-item" routerLinkActive="active">
             <a id="cart"
               ><i
                 (click)="cart()"
@@ -75,7 +75,10 @@
         </li>
         <ng-template #esfalsa>
           <li class="nav-item" routerLinkActive="active">
-            <a (click)="iniciosesionServicio.cerrarSesion()" class="nav-link"
+            <a
+              (click)="iniciosesionServicio.cerrarSesion()"
+              class="nav-link"
+              style="cursor: pointer"
               >Cerrar Sesión</a
             >
           </li>

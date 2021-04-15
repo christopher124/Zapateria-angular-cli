@@ -67,6 +67,12 @@ export class ClientesComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+    this.usuarioservicio.ModificarUsuario(this.usuario).subscribe(
+      (res) => {
+        // this.toastr.success('Usuario Registrado');
+      },
+      (err) => console.log(err)
+    );
     this.ConsultarTodoClient();
     return;
   }

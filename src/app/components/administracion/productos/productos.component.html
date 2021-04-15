@@ -304,7 +304,7 @@
             <input
               name="Contrase del empleado"
               [(ngModel)]="producto.Descripcion"
-              type="password"
+              type="text"
               class="form-control"
               placeholder="Ingrese la contraseña del empleado"
               aria-label="Contrase del empleado"
@@ -313,17 +313,16 @@
           </div>
 
           <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01"
-              >Foto</label
-            >
-            <select
+            <span class="input-group-text" id="basic-addon1">Foto</span>
+            <input
+              name="Contrase del empleado"
               [(ngModel)]="producto.Foto"
-              class="form-select"
-              id="inputGroupSelect01"
-            >
-              <option selected>Administrador</option>
-              <option value="Gerente">Gerente</option>
-            </select>
+              type="file"
+              class="form-control"
+              placeholder="Ingrese la foto del producto"
+              aria-label="Contrase del empleado"
+              aria-describedby="basic-addon2"
+            />
           </div>
         </div>
         <div class="modal-footer">

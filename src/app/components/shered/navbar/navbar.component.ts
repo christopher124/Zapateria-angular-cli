@@ -17,6 +17,14 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  // rolm() {
+  //   if (!!localStorage.getItem('rol')) {
+  //     return localStorage.getItem('rol');
+  //   } else {
+  //     return '';
+  //   }
+  // }
+
   public openCart: boolean = false;
   public cart() {
     //Se usa para abrir o cerrar el carrito

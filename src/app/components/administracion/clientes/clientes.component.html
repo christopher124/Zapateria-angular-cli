@@ -250,15 +250,16 @@
           </div>
 
           <div class="input-group mb-3">
-            <span class="input-group-text">Correo</span>
+            <span class="input-group-text" id="basic-addon1">Email</span>
             <input
-              required
+              name="Correo del cliente"
               [(ngModel)]="cliente.Email"
               [(ngModel)]="usuario.Email"
               type="email"
               class="form-control"
-              placeholder="Ingrese la correo del cliente"
-              aria-label="Server"
+              placeholder="Ingrese el correo del cliente"
+              aria-label="Correo del empleado"
+              aria-describedby="basic-addon2"
             />
           </div>
 

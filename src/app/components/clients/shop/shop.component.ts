@@ -18,24 +18,13 @@ export class ShopComponent implements OnInit {
     _idProducto: '',
     Nombre: '',
     Precio: '',
-    Existensia: '',
-    Categoria: [
-      {
-        Tipo: '',
-        Descrip: '',
-        Numeracion: [''],
-        Color: [''],
-        Foto_Prod: '',
-      },
-    ],
-    Proveedor: {
-      NombrePro: '',
-      DireccionPro: '',
-      TelefonoPro: '',
-      EmailPro: '',
-    },
+    Existencia: '',
+    Numeracion: '',
+    Color: '',
+    Tipo: '',
+    Descripcion: '',
+    Foto: '',
   };
-
   constructor(
     private CartService: CartService,
     public iniciosesionServicio: LoginService,

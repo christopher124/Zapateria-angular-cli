@@ -132,7 +132,7 @@
                 <th scope="row">{{ emplea.Fecha_ingre }}</th>
                 <th>
                   <i
-                    (click)="ElimEmpleado(emplea._idEmpleado)"
+                    (click)="ElimEmpleado(emplea._idEmpleado, usuario.Email)"
                     type="button"
                     class="bi-trash-fill"
                   ></i>
@@ -245,6 +245,7 @@
             <input
               name="Correo del empleado"
               [(ngModel)]="empleado.Email"
+              [(ngModel)]="usuario.Email"
               type="email"
               class="form-control"
               placeholder="Ingrese el correo del empleado"
@@ -258,6 +259,7 @@
             <input
               name="Contrase del empleado"
               [(ngModel)]="empleado.Password"
+              [(ngModel)]="usuario.Password"
               type="password"
               class="form-control"
               placeholder="Ingrese la contraseña del empleado"
@@ -279,7 +281,7 @@
           </div>
 
           <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Rol</span>
+            <span class="input-group-text" id="basic-addon1">Sueldo</span>
             <input
               name="Sueldo"
               [(ngModel)]="empleado.Sueldo"
@@ -417,6 +419,7 @@
             <input
               name="Correo del empleado"
               [(ngModel)]="empleado.Email"
+              [(ngModel)]="usuario.Email"
               type="email"
               class="form-control"
               placeholder="Ingrese el correo del empleado"
@@ -426,10 +429,11 @@
           </div>
 
           <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Contrase;a</span>
+            <span class="input-group-text" id="basic-addon1">Contraseña</span>
             <input
               name="Contrase del empleado"
               [(ngModel)]="empleado.Password"
+              [(ngModel)]="usuario.Password"
               type="password"
               class="form-control"
               placeholder="Ingrese la contraseña del empleado"

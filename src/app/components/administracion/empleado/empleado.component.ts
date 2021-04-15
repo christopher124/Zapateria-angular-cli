@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmpleadoService } from '../../../services/empleado.service';
 import { LoginService } from '../../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-empleado',
   templateUrl: './empleado.component.html',
@@ -25,10 +26,17 @@ export class EmpleadoComponent implements OnInit {
     Fecha_ingre: '',
   };
 
+  usuarios: any;
+  usuario = {
+    Email: '',
+    Password: '',
+  };
+
   constructor(
     private empleadoServicio: EmpleadoService,
     public iniciosesionServicio: LoginService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private usuarioservicio: UsuarioService
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +51,12 @@ export class EmpleadoComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+    this.usuarioservicio.GuardarUsuario(this.usuario).subscribe(
+      (res) => {
+        // this.toastr.success('Usuario Registrado');
+      },
+      (err) => console.log(err)
+    );
     this.limpiarCampos();
   }
 
@@ -53,13 +67,25 @@ export class EmpleadoComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+    this.usuarioservicio.ModificarUsuario(this.usuario).subscribe(
+      (res) => {
+        // this.toastr.success('Usuario Registrado');
+      },
+      (err) => console.log(err)
+    );
   }
 
-  ElimEmpleado(_idEmpleado: Number) {
+  ElimEmpleado(_idEmpleado: number, Email: string) {
     this.empleadoServicio.EliminarEmp(_idEmpleado).subscribe(
       (res) => {
         this.toastr.success('Empleado Eliminado');
         this.ConsultarTodoEmpleado();
+      },
+      (err) => console.log(err)
+    );
+    this.usuarioservicio.EliminarUsuario(Email).subscribe(
+      (res) => {
+        this.toastr.success('Usuario Eliminado');
       },
       (err) => console.log(err)
     );

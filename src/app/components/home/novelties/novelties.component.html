@@ -23,12 +23,14 @@
             height="225"
           />
           <div class="card-body">
-            <h4 class="card-title">Nombre del producto: {{ item.Nombres }}</h4>
+            <h4 class="card-title">Nombre del producto: {{ item.Nombre }}</h4>
             <p class="card-text">Tipo del Producto: {{ item.Tipo }}</p>
             <p class="card-text">Precio del producto: $ {{ item.Precio }}</p>
             <p class="card-text">Numero de Zapato: {{ item.Numeracion }}</p>
-            <p class="card-text">Color disponible:{{ item.Descrip }}</p>
-            <p class="card-text">Color disponible:{{ item.Color }}</p>
+            <p class="card-text">
+              Descripción del producto: {{ item.Descripcion }}
+            </p>
+            <p class="card-text">Color disponible: {{ item.Color }}</p>
             <p class="card-text">
               <small class="text-muted"
                 >Existencias del producto: {{ item.Existencia }}</small
