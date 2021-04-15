@@ -23,22 +23,12 @@ export class ProductosComponent implements OnInit {
     _idProducto: '',
     Nombre: '',
     Precio: '',
-    Existensia: '',
-    Categoria: [
-      {
-        Tipo: '',
-        Descrip: '',
-        Numeracion: [''],
-        Color: [''],
-        Foto_Prod: '',
-      },
-    ],
-    Proveedor: {
-      NombresPro: '',
-      DireccionPro: '',
-      TelefonoPro: '',
-      EmailPro: '',
-    },
+    Existencia: '',
+    Numeracion: '',
+    Color: '',
+    Tipo: '',
+    Descripcion: '',
+    Foto: '',
   };
   ngOnInit(): void {
     this.ConsultarTodoProducto();
@@ -47,29 +37,32 @@ export class ProductosComponent implements OnInit {
   GuardarProducto() {
     this.productoServicio.GuardarProduc(this.producto).subscribe(
       (res) => {
-        this.toastr.success('Empleado Registrado');
+        this.toastr.success('Producto Registrado');
         this.ConsultarTodoProducto();
       },
       (err) => console.log(err)
     );
     this.limpiarCampos();
-    
   }
 
-  ModificarProducto(product: object) {
-    this.productoServicio.ModificarProduc(product);
-    console.log(product);
-  }
-
-  ElimEmpleado(_idProducto: Number) {
-    this.productoServicio.EliminarProduc(_idProducto).subscribe(
+  ModificarProducto() {
+    this.productoServicio.ModificarProduc(this.producto).subscribe(
       (res) => {
-        this.toastr.success('Empleado Eliminado');
+        this.toastr.success('Producto modificado correctamente');
         this.ConsultarTodoProducto();
       },
       (err) => console.log(err)
     );
-    
+  }
+
+  eliminarProducto(_idProducto: number) {
+    this.productoServicio.EliminarProduc(_idProducto).subscribe(
+      (res) => {
+        this.toastr.success('Producto eliminado correctamente');
+        this.ConsultarTodoProducto();
+      },
+      (err) => console.log(err)
+    );
   }
 
   ConsulEmpleado() {
@@ -89,14 +82,10 @@ export class ProductosComponent implements OnInit {
     this.producto._idProducto = '';
     this.producto.Nombre = '';
     this.producto.Precio = '';
-    this.producto.Existensia = '';
-    this.producto.Categoria[0].Color = [''];
-    this.producto.Categoria[0].Descrip = '';
-    this.producto.Categoria[0].Numeracion = [''];
-    this.producto.Categoria[0].Foto_Prod = '';
-    this.producto.Proveedor.NombresPro = '';
-    this.producto.Proveedor.TelefonoPro = '';
-    this.producto.Proveedor.EmailPro = '';
-    this.producto.Proveedor.DireccionPro = '';
+    this.producto.Existencia = '';
+    this.producto.Color = '';
+    this.producto.Descripcion = '';
+    this.producto.Numeracion = '';
+    this.producto.Foto = '';
   }
 }

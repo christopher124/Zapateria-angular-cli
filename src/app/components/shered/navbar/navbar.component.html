@@ -1,7 +1,4 @@
-<nav
-  *ngIf="!iniciosesionServicio.eslogueado()"
-  class="navbar navbar-expand-lg navbar-dark bg-dark"
->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="home">Z&C ZAPATOS & CO</a>
     <button
@@ -30,8 +27,32 @@
             >Nosotros</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            *ngIf="!iniciosesionServicio.eslogueado()"
+            [routerLink]="['/contactanos']"
+            >Contactanos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/tienda']">Tienda</a>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <ul class="nav-item" routerLinkActive="active">
+          <li>
+            <a id="cart"
+              ><i
+                (click)="cart()"
+                style="color: lightcoral; font-size: 1.8rem; cursor: pointer"
+                class="fa fa-shopping-cart"
+              >
+              </i
+            ></a>
+          </li>
+        </ul>
+        <!--end navbar-right -->
         <li class="nav-item" routerLinkActive="active">
           <a
             ngif
@@ -39,6 +60,17 @@
             *ngIf="!iniciosesionServicio.eslogueado(); else esfalsa"
             routerLink="iniciosesion"
             >Iniciar sesión</a
+          >
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a
+            *ngIf="
+              (iniciosesionServicio.eslogueado() && rol() == 'Administrador') ||
+              rol() == 'Gerente'
+            "
+            class="nav-link"
+            routerLink="dashboard"
+            >Administracion</a
           >
         </li>
         <ng-template #esfalsa>
@@ -52,4 +84,4 @@
     </div>
   </div>
 </nav>
-
+<app-cart *ngIf="openCart"></app-cart>

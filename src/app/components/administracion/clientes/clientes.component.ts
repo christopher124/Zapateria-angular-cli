@@ -43,7 +43,10 @@ export class ClientesComponent implements OnInit {
   GuarClien() {
     this.clienteServico.GuardarCliente(this.cliente).subscribe(
       (res) => {
-        this.toastr.success('Cliente Registrado');},
+        this.toastr.success('Cliente Registrado');
+        this.ConsultarTodoClient();
+      },
+
       (err) => console.log(err)
     );
     this.usuarioservicio.GuardarUsuario(this.usuario).subscribe(
@@ -53,21 +56,19 @@ export class ClientesComponent implements OnInit {
       (err) => console.log(err)
     );
     this.limpiarCampos();
-    this.ConsultarTodoClient();
+
     return;
   }
 
-  ModificarCliente(cliene : object){
-this.clienteServico.ModificarCliente(cliene).subscribe(
-  (res) => {
-    this.toastr.success('Cliente Modificado');
-  },
-  (err) => console.log(err)
-  
-);
-this.ConsultarTodoClient();
-return;
-
+  ModificarCliente() {
+    this.clienteServico.ModificarCliente(this.cliente).subscribe(
+      (res) => {
+        this.toastr.success('Cliente Modificado');
+      },
+      (err) => console.log(err)
+    );
+    this.ConsultarTodoClient();
+    return;
   }
 
   ElimCliente(Email: string) {
@@ -85,8 +86,6 @@ return;
       },
       (err) => console.log(err)
     );
-   
-    
   }
 
   ConsulClient(Nombres: string) {
@@ -96,7 +95,9 @@ return;
       },
       (err) => console.log(err)
     );
+    this.ConsultarTodoClient();
   }
+
   ConsultarTodoClient() {
     this.clientes = this.clienteServico.ConsultarTodoCliente();
     return;

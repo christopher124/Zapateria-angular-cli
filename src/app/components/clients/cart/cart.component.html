@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="shopping-cart">
+    <div class="shopping-cart-header">
+      <i class="fa fa-shopping-cart cart-icon"></i
+      ><span class="badge">{{ totalQuantity }}</span>
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span class="main-color-text">${{ totalPrice }}</span>
+      </div>
+    </div>
+    <!--end shopping-cart-header -->
+    <ul class="shopping-cart-items">
+      <li class="clearfix" *ngFor="let item of items">
+        <img
+          src="../../../../assets/img/nosotros2.jpg"
+          alt="item1"
+          style="font: size 23px"
+        />
+        <span class="item-name">{{ item.Nombre }}</span>
+        <span class="item-price">${{ item.Precio }}</span>
+        <span class="item-quantity">Cantidad: {{ item.quantity }}</span>
+        <br />
+        <br />
+        <button
+          type="button"
+          style="text-align: center"
+          class="btn btn-danger ml-4"
+          (click)="remove(item)"
+        >
+          Remove
+        </button>
+      </li>
+    </ul>
+    <li>
+      <div
+        *ngIf="iniciosesionServicio.eslogueado(); else esfalsa"
+        style="text-align: center"
+        id="pay"
+      ></div>
+    </li>
+    <ng-template #esfalsa>
+      <div
+        style="text-align: center"
+        *ngIf="!iniciosesionServicio.eslogueado()"
+        id="hola"
+      >
+        <img
+          src="https://www.paypalobjects.com/marketing/web/mx/logos-buttons/Check-out-with-yellow_132x26.png"
+          alt="Check out with PayPal"
+          style="cursor: pointer"
+          (click)="nologin()"
+        />
+      </div>
+    </ng-template>
+  </div>
+  <!--end shopping-cart -->
+</div>
+<!--end container -->

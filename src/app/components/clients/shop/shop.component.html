@@ -1,92 +1,48 @@
-<nav
-  *ngIf="iniciosesionServicio.eslogueado()"
-  class="navbar navbar-expand-lg navbar-dark bg-dark"
->
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">Z&C ZAPATOS & CO</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" [routerLink]="['/home']"
-            ></a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-          class="nav-item" routerLinkActive="active"
-            *ngIf="!iniciosesionServicio.eslogueado()"
-            routerLink="nosotros"
-            >Nosotros</a
-          >
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item" routerLinkActive="active">
-          <a
-            ngif
-            class="nav-item" routerLinkActive="active"
-            *ngIf="!iniciosesionServicio.eslogueado(); else esfalsa"
-            routerLink="iniciosesion"
-            >Iniciar sesion</a
-          >
-        </li>
-        <ng-template #esfalsa>
-          <li class="nav-item" routerLinkActive="active">
-            <a (click)="iniciosesionServicio.cerrarSesion()" class="nav-link"
-              >Cerrar Sesión</a
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Productos</h1>
+        <p class="lead text-muted">Productos en la tienda online</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-md-4 animated fadeIn fast"
+          *ngFor="let item of productos | async; let i = index"
+        >
+          <img
+            class="bd-placeholder-img card-img-top"
+            src="../../../../assets/img/no-img.png"
+            width="100%"
+            height="225px"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Nombre del producto: {{ item.Nombre }}</h4>
+            <p class="card-text">Tipo del Producto: {{ item.Tipo }}</p>
+            <p class="card-text">Precio del producto: $ {{ item.Precio }}</p>
+            <p class="card-text">Numero de Zapato: {{ item.Numeracion }}</p>
+            <p class="card-text">Color disponible:{{ item.Color }}</p>
+            <p class="card-text">
+              <small class="text-muted"
+                >Existencias del producto: {{ item.Existencia }}</small
+              >
+            </p>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="addCart(item)"
             >
-          </li>
-        </ng-template>
-      </ul>
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
-
-<main>
-
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            
-          <h1 class="fw-light">Productos</h1>
-          <p class="lead text-muted">Productos en la tienda online</p>
-         
-        </div>
-      </div>
-    </section>
-  
-    <div class="album py-5 bg-light">
-      <div class="container">
-  
-        <div class="row">                                            
- 
-            <div class="col-md-4 animated fadeIn fast" *ngFor="let item of productos | async; let i = index">
-                <img class="bd-placeholder-img card-img-top"  [src]="item.Categoria[0].Foto_Prod" width="100%" height="225">
-                <div class="card-body">
-                    <h4 class="card-title">producto: {{ item.Nombre }}</h4>
-                    <p class="card-text">Tipo: {{ item.Categoria[0].Tipo }}</p>
-                    <p class="card-text">Precio: ${{ item.Precio }}</p>
-                    <p class="card-text">Numero de Zapato: {{ item.Categoria[0].Numeracion[0] }}</p>
-                    <p class="card-text">Color:{{ item.Categoria[0].Color[0] }}</p>
-                    <p class="card-text"><small class="text-muted">Existencias: {{ item.Existensia }}</small></p>
-         
-                    
-                    <button (click)="verProducto(i)" type="button" class="btn btn-outline-primary btn-block">Ver producto</button>        
-                  </div>
-            </div>
-        </div>
-      </div>
-</div>
-  
-  </main>
+</main>

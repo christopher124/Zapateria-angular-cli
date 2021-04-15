@@ -1,32 +1,31 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductoService {
-  private url = "http://localhost:3000/productos";
+  private url = 'http://localhost:3000/productos';
 
-  constructor(private htpp:HttpClient) { }
+  constructor(private htpp: HttpClient) {}
 
-  GuardarProduc(producto:object){
-      return this.htpp.post<any>(this.url,producto);
+  GuardarProduc(producto: object) {
+    return this.htpp.post<any>(this.url, producto);
   }
 
-  ModificarProduc(producto:object){
-    return this.htpp.put<any>(this.url,producto);
+  ModificarProduc(producto: object) {
+    return this.htpp.put<any>(this.url, producto);
   }
 
-  EliminarProduc(_idProducto:Number){
-      return this.htpp.delete<any>(this.url + "/" + _idProducto);
+  EliminarProduc(_idProducto: Number) {
+    return this.htpp.delete<any>(`${this.url}/${_idProducto}`);
   }
 
-  ConsultarProduc(Nombre:String){
-    return this.htpp.get<any>(this.url + "/"+ Nombre);
-
+  ConsultarProduc(Nombre: String) {
+    return this.htpp.get<any>(`${this.url}/${Nombre}`);
   }
 
-  ConsultarTodoProduc(){
- return this.htpp.get<any>(this.url);
+  ConsultarTodoProduc() {
+    return this.htpp.get<any>(this.url);
   }
 }

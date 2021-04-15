@@ -1,0 +1,52 @@
+.fondo {
+  background-image: url(../../../../assets/font.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+table {
+  border: rgb(9, 150, 206) 5px groove;
+  width: 100%;
+}
+
+td {
+  border: rgb(14, 170, 231) 5px groove;
+  width: 400px;
+}
+
+* {
+  text-align: center;
+}
+
+h2 {
+  font-family: "Verdana";
+}
+
+h3 {
+  font-family: Tahoma;
+  color: cornflowerblue;
+}
+
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.mapa h2 {
+  text-align: left;
+  padding-left: 40px;
+}
+
+#sociales a {
+  width: 100%;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+}
+
+#contacto h3 {
+  color: white;
+}

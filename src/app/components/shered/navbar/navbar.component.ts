@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from '../../../services/login.service'
+import { LoginService } from '../../../services/login.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(public iniciosesionServicio: LoginService) {}
 
-
-  constructor(public iniciosesionServicio: LoginService) {
+  ngOnInit(): void {}
+  rol() {
+    if (!!localStorage.getItem('rol')) {
+      return localStorage.getItem('rol');
+    } else {
+      return '';
+    }
   }
 
-
-  ngOnInit(): void {
+  public openCart: boolean = false;
+  public cart() {
+    //Se usa para abrir o cerrar el carrito
+    this.openCart = !this.openCart;
   }
-
 }

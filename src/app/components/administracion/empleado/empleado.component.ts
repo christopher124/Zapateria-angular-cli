@@ -18,20 +18,11 @@ export class EmpleadoComponent implements OnInit {
     Apellidos: '',
     Direccion: '',
     Telefono: '',
-    Fecha_Nacimiento: '',
     Email: '',
     Password: '',
-    Rol: {
-      Nombre: '',
-      Sueldo: '',
-      Fecha_ingre: '',
-    },
-    Sucursal: {
-      NombreSuc: '',
-      DireccionSuc: '',
-      TelefonoSuc: '',
-      CiudadSuc: '',
-    },
+    Rol: '',
+    Sueldo: '',
+    Fecha_ingre: '',
   };
 
   constructor(
@@ -48,17 +39,20 @@ export class EmpleadoComponent implements OnInit {
     this.empleadoServicio.GuardarEmp(this.empleado).subscribe(
       (res) => {
         this.toastr.success('Empleado Registrado');
+        this.ConsultarTodoEmpleado();
       },
       (err) => console.log(err)
     );
     this.limpiarCampos();
-    this.ConsultarTodoEmpleado();
   }
 
-  ModificarEmpleado(emplea: object) {
-    this.empleadoServicio.ModificarEmp(emplea)
-    console.log(emplea);
-    
+  ModificarEmpleado() {
+    this.empleadoServicio.ModificarEmp(this.empleado).subscribe(
+      (res) => {
+        this.toastr.success('Empleado modificado con exito');
+      },
+      (err) => console.log(err)
+    );
   }
 
   ElimEmpleado(_idEmpleado: Number) {
@@ -69,7 +63,6 @@ export class EmpleadoComponent implements OnInit {
       },
       (err) => console.log(err)
     );
-    
   }
 
   ConsulEmpleado() {
@@ -91,15 +84,10 @@ export class EmpleadoComponent implements OnInit {
     this.empleado.Apellidos = '';
     this.empleado.Direccion = '';
     this.empleado.Telefono = '';
-    this.empleado.Fecha_Nacimiento = '';
     this.empleado.Email = '';
     this.empleado.Password = '';
-    this.empleado.Rol.Nombre = '';
-    this.empleado.Rol.Sueldo = '';
-    this.empleado.Rol.Fecha_ingre = '';
-    this.empleado.Sucursal.NombreSuc = '';
-    this.empleado.Sucursal.DireccionSuc = '';
-    this.empleado.Sucursal.TelefonoSuc = '';
-    this.empleado.Sucursal.CiudadSuc = '';
+    this.empleado.Rol = '';
+    this.empleado.Sueldo = '';
+    this.empleado.Fecha_ingre = '';
   }
 }

@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { IItem } from 'src/app/interfaces/item.interface';
+import { CartService } from 'src/app/services/cart.service';
 import { LoginService } from 'src/app/services/login.service';
 import { ProductoService } from 'src/app/services/producto.service';
-import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
-  
+  public listProducts!: Array<IItem>;
   productos: any;
   producto = {
     _idProducto: '',
@@ -34,15 +36,19 @@ export class ShopComponent implements OnInit {
     },
   };
 
-  constructor(public iniciosesionServicio: LoginService,private productosServices: ProductoService, private router:Router) { }
-
-  verProducto(_idProducto: number){
-    this.router.navigate( ['/product',_idProducto] );
-  }
+  constructor(
+    private CartService: CartService,
+    public iniciosesionServicio: LoginService,
+    private productosServices: ProductoService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.productos = this.productosServices.ConsultarTodoProduc();
-    // console.log(this.productos);    
   }
 
+  public addCart(product: IItem) {
+    this.CartService.changeCart(product);
+    this.toastr.success('Producto añadido al carrito');
+  }
 }
