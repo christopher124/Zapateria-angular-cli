@@ -12,7 +12,7 @@
     <ul class="shopping-cart-items">
       <li class="clearfix" *ngFor="let item of items">
         <img
-          src="../../../../assets/img/no-img.png"
+          [src]="item.Foto"
           alt="item1"
           style="font: size 23px"
         />
@@ -27,7 +27,7 @@
           class="btn btn-danger ml-4"
           (click)="remove(item)"
         >
-          Remove
+          Eliminar
         </button>
       </li>
     </ul>
